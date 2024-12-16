@@ -21,33 +21,30 @@ var createNewTaskElement=function(taskString){
     listItem.classList.add("task-item");
 
     //input (checkbox)
-    var checkBox=document.createElement("input");//checkbx
+    var checkBox=document.createElement("input");//checkbox
+    checkBox.classList.add("task-item-checkbox");
+    checkBox.type="checkbox";
     //label
     var label=document.createElement("label");//label
+    label.classList.add("task", "task-item-label");
+    label.innerText=taskString;
     //input (text)
     var editInput=document.createElement("input");//text
+    editInput.type="text";
+    editInput.classList.add("task", "task-input", "task-item-input");
     //button.edit
     var editButton=document.createElement("button");//edit button
-
+    editButton.classList.add("btn", "btn--edit");
+    editButton.innerText="Edit";
     //button.delete
     var deleteButton=document.createElement("button");//delete button
+    deleteButton.classList.add("btn", "btn--delete");
     var deleteButtonImg=document.createElement("img");//delete button image
-
-    label.innerText=taskString;
-    label.className='task';
-
-    //Each elements, needs appending
-    checkBox.type="checkbox";
-    editInput.type="text";
-    editInput.classList.add("task", "task-input");
-
-    editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
-
-    deleteButton.className="delete";
+    deleteButtonImg.classList.add("delete-icon");
     deleteButtonImg.src='./remove.svg';
-    deleteButton.appendChild(deleteButtonImg);
+    deleteButtonImg.setAttribute("alt", "remove icon");
 
+    deleteButton.appendChild(deleteButtonImg);
 
     //and appending.
     listItem.appendChild(checkBox);
