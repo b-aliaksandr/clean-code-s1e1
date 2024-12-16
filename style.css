@@ -23,13 +23,19 @@ button {
   display: block;
   text-align: right;
 
+  .hero-content {
+    margin: 0 auto;
+    display: block;
+    text-align: right;
+  }
+
   .hero-img {
     width: 100%;
   }
 
   .more-info {
     font-family: fantasy, cursive;
-  }
+  }  
 }
 
 @media (max-width: 768px) {
@@ -37,7 +43,7 @@ button {
     text-align: center;
   }
 }
-.main {
+.todo {
   display: block;
   width: 500px;
   margin: 0 auto 0;
@@ -93,6 +99,10 @@ button {
 }
 
 /* New Task */
+.new-task-section {
+  margin-block: 1rem;
+}
+
 .task-label {
   display: block;
   margin: 0 0 20px;
